@@ -12,16 +12,13 @@ const Campus = db.define("campus", {
     type: Sequelize.STRING,
     allowNull: false
   },
-
   address: {
     type: Sequelize.STRING,
     allowNull: false
   },
-
   description: {
     type: Sequelize.STRING,
   },
-
   imageUrl: {
     type: Sequelize.STRING,
     allowNull: true,
@@ -31,3 +28,4 @@ const Campus = db.define("campus", {
 
 // Export the campus model
 module.exports = Campus;
+
