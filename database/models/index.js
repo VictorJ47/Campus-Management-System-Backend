@@ -3,14 +3,13 @@
 
 It registers models, sets up associations between tables, and generates barrel file for exporting the models.
 ==================================================*/
-const Student  = require('./Student');  // Import Student model
-const Campus  = require('./Campus');  // Import Campus model
+const Student = require('./Student');
+const Campus = require('./Campus');
 
-Student.belongsTo(Campus);  // Student belongs to only one Campus 
-Campus.hasMany(Student);  // Campus can have many Student
+Student.belongsTo(Campus, { as: 'campus', foreignKey: 'campusId' });
+Campus.hasMany(Student, { as: 'students', foreignKey: 'campusId' });
 
-// Export models and associations
 module.exports = {
   Student,
-  Campus
+  Campus,
 };
